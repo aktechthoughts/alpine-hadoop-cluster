@@ -1,0 +1,22 @@
+version: '3'
+services:
+  master:
+    image: aktechthoughts/alpine-hadoop:1
+    build: .
+    hostname: master
+    ports:
+     - 19888:19888
+     - 50070:50070
+    environment:
+     AUTHORIZED_KEYS: ${AUTHORIZED_KEYS}
+
+  
+  slave:
+    image: aktechthoughts/alpine-hadoop:1
+    hostname: slave
+    depends_on:
+     - master
+    environment:
+     AUTHORIZED_KEYS: ${AUTHORIZED_KEYS}
+
+

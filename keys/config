@@ -1,0 +1,13 @@
+Host master
+    HostName master
+    User hadoop
+    Port 22
+    IdentityFile ~/.ssh/master/id_rsa
+
+Host slave
+    HostName slave
+    User hadoop
+    Port 22
+    IdentityFile ~/.ssh/slave/id_rsa
+
+
